@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #14131a;
+}
+
+.blur-background {
+  backdrop-filter: blur(20px);
+}
+.box-shadow {
+  -webkit-box-shadow: 3px -1px 24px 10px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 3px -1px 24px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 3px -1px 24px 10px rgba(0, 0, 0, 0.22);
+}
+
+.height-100 {
+  height: 100vh;
+}
+.height-0 {
+  height: 0;
+}
