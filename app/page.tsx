@@ -1,13 +1,10 @@
-import { Header, ProjectCard, SikllCard } from "@/components";
-import Image from "next/image";
+import { Header, ProjectCard, SkillCard } from "@/components";
+import { ProjectModal } from "@/components/ProjectsModal";
+import { projectsArr, skillsArr } from "@/lib/constants";
 
 export default function Home() {
   return (
     <div className="min-h-[100vh] flex flex-col items-center gap-[30px]">
-      <div className="text-white text-[20px]">
-        Note: This is all dummy data right now I am still in the process of
-        making it!
-      </div>
       <Header />
 
       {/* projects sec  */}
@@ -15,26 +12,29 @@ export default function Home() {
         <div className=" flex flex-col gap-[30px] ">
           <div className="text-white text-[20px] font-[600]">Projects</div>
           <div className="flex flex-wrap  items-center gap-[20px]">
-            <ProjectCard
-              imageSrc="/discord.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
-            <ProjectCard
-              imageSrc="/spotify.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
-            <ProjectCard
-              imageSrc="/amazon.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
-            <ProjectCard
-              imageSrc="/dalle.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
+            {projectsArr.map(
+              ({
+                imageSrc,
+                title,
+                description,
+                github_repo_link,
+                hosted_link,
+              }) => {
+                return (
+                  <ProjectModal
+                    github_repo_link={github_repo_link}
+                    hosted_link={hosted_link}
+                    trigger={
+                      <ProjectCard
+                        imageSrc={`/projects/${imageSrc}`}
+                        title={title}
+                        description={description}
+                      />
+                    }
+                  />
+                );
+              }
+            )}
           </div>
         </div>
       </div>
@@ -43,55 +43,10 @@ export default function Home() {
       <div className="w-[95%] flex flex-col mt-[100px]">
         <div className=" flex flex-col gap-[30px] ">
           <div className="text-white text-[20px] font-[600]">What I know</div>
-          <div className="flex  items-center gap-[50px]">
-            <SikllCard
-              title="frontend"
-              skills={[
-                "HTML",
-                "CSS",
-                "Tailwind",
-                "Javascript",
-                "Typescript",
-                "Reach Js",
-                "Next Js",
-              ]}
-            />
-            <SikllCard
-              title="backend"
-              skills={[
-                "HTML",
-                "CSS",
-                "Tailwind",
-                "Javascript",
-                "Typescript",
-                "Reach Js",
-                "Next Js",
-              ]}
-            />
-            <SikllCard
-              title="database"
-              skills={[
-                "HTML",
-                "CSS",
-                "Tailwind",
-                "Javascript",
-                "Typescript",
-                "Reach Js",
-                "Next Js",
-              ]}
-            />
-            <SikllCard
-              title="devops"
-              skills={[
-                "HTML",
-                "CSS",
-                "Tailwind",
-                "Javascript",
-                "Typescript",
-                "Reach Js",
-                "Next Js",
-              ]}
-            />
+          <div className="flex  items-center gap-[80px]">
+            {skillsArr.map(({ domain, skills }) => {
+              return <SkillCard domain={domain} skills={skills} />;
+            })}
           </div>
         </div>
       </div>
@@ -102,26 +57,15 @@ export default function Home() {
         <div className=" flex flex-col gap-[30px] ">
           <div className="text-white text-[20px] font-[600]">More Projects</div>
           <div className="flex flex-wrap  items-center gap-[20px]">
-            <ProjectCard
-              imageSrc="/discord.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
-            <ProjectCard
-              imageSrc="/spotify.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
-            <ProjectCard
-              imageSrc="/amazon.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
-            <ProjectCard
-              imageSrc="/dalle.png"
-              title="discord"
-              description="Next.js 13, React Hook Form, Zustand, Shadcn, Typescript"
-            />
+            {projectsArr.map(({ imageSrc, title, description }) => {
+              return (
+                <ProjectCard
+                  imageSrc={`/projects/${imageSrc}`}
+                  title={title}
+                  description={description}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
