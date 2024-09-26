@@ -2,17 +2,32 @@ import { ProjectCardProp, SkillCardProp } from "@/lib/types";
 
 export const projectsArr: ProjectCardProp[] = [
   {
-    imageSrc: "discord.png",
-    title: "discord",
-    description: "Next.js 13, React Hook Form, Zustand, Shadcn, Typescript",
-    github_repo_link: "https://github.com/fkk989/task-manager",
+    imageSrc: "zapier.png",
+    title: "Zapier Clone (In Progress)",
+    description:
+      "Turborepo, Next.js, typescript, Kafka, React hook form, postgres",
+    github_repo_link: "https://github.com/fkk989/zapier-clone",
+  },
+  {
+    imageSrc: "repo-tracker.png",
+    title: "Repo Tracker",
+    description: "Next.js, typescript, chart.js, postgresQl",
+    github_repo_link: "https://github.com/fkk989/repo-tracker",
+    hosted_link: "https://repo-tracker-seven.vercel.app",
   },
   {
     imageSrc: "organizerPro.png",
     title: "Organier Pro",
-    description: "Next.js 13, React Hook Form, Zustand, Shadcn, Typescript",
+    description: "Typescript, React.js, Tailwind Css, Node.js, Prisma, Docker",
     github_repo_link: "https://github.com/fkk989/task-manager",
     hosted_link: "https://task-manager-xy.vercel.app/",
+  },
+  {
+    imageSrc: "react-custom-component.png",
+    title: "React Custom Component",
+    description:
+      "Custom components which gives you the  functional behaviour with full customization",
+    github_repo_link: "https://github.com/fkk989/custom-components",
   },
 ];
 

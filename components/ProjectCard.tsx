@@ -8,7 +8,7 @@ export const ProjectCard: React.FC<ProjectCardProp> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col w-[310px]  rounded-lg overflow-hidden cursor-pointer">
+    <div className="flex flex-col w-[310px]  rounded-lg overflow-hidden cursor-pointer hover:scale-[1.1] transition-all duration-300 ease-out">
       {/* img */}
       <div>
         <Image
@@ -20,9 +20,9 @@ export const ProjectCard: React.FC<ProjectCardProp> = ({
         />
       </div>
       {/* info */}
-      <div className="flex flex-col w-[100%]  bg-white p-[10px] ">
-        <h3 className="capitalize font-bold">{title}</h3>
-        <p className="text-[12px]">{description}</p>
+      <div className="flex flex-col w-[100%] min-h-[120px]  bg-white p-[10px] border-gray-300 border-t-[1px] ">
+        <h3 className="capitalize font-bold text-[20px]">{title}</h3>
+        <p className="text-[15px]">{description}</p>
       </div>
     </div>
   );
