@@ -2,6 +2,22 @@ import { ProjectCardProp, SkillCardProp } from "@/lib/types";
 
 export const projectsArr: ProjectCardProp[] = [
   {
+    imageSrc: "email-marketing-app.png",
+    title: "A Email marketing automations tool",
+    description:
+      "Node.js, Agenda(for scheduling), React.js, Redis(Rate Limiting), React hook form",
+    github_repo_link: "https://github.com/fkk989/future-blink",
+    hosted_link: "https://future-blink-five.vercel.app/"
+  },
+  {
+    imageSrc: "chat-app.png",
+    title: "Highly scale able chap app",
+    description:
+      "Websockets, Node.js, Next.js, Redis( pub/sub), React hook form",
+    github_repo_link: "https://github.com/fkk989/chat-app",
+    hosted_link: "https://chat-app-delta-two-82.vercel.app"
+  },
+  {
     imageSrc: "zapier.png",
     title: "Zapier Clone (In Progress)",
     description:
