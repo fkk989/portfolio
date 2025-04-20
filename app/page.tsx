@@ -63,16 +63,32 @@ export default function Home() {
               More Projects
             </div>
             <div className="flex flex-wrap  items-center gap-[20px]">
-              {projectsArr.map(({ imageSrc, title, description }) => {
-                return (
-                  <ProjectCard
-                    key={title}
-                    imageSrc={`/projects/${imageSrc}`}
-                    title={title}
-                    description={description}
-                  />
-                );
-              })}
+              {projectsArr
+                .slice(4)
+                .map(
+                  ({
+                    imageSrc,
+                    title,
+                    description,
+                    github_repo_link,
+                    hosted_link,
+                  }) => {
+                    return (
+                      <ProjectModal
+                        key={title}
+                        github_repo_link={github_repo_link}
+                        hosted_link={hosted_link}
+                        trigger={
+                          <ProjectCard
+                            imageSrc={`/projects/${imageSrc}`}
+                            title={title}
+                            description={description}
+                          />
+                        }
+                      />
+                    );
+                  }
+                )}
             </div>
           </div>
         </div>
